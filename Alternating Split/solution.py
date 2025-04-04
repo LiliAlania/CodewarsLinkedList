@@ -19,4 +19,15 @@ def alternating_split(head):
     second_current = second_head
     current = head.next.next
     is_first_turn = True
+    while current:
+        if is_first_turn:
+            first_current.next = current
+            first_current = first_current.next
+        else:
+            second_current.next = current
+            second_current = second_current.next
+        is_first_turn = not is_first_turn
+        current = current.next
+    first_current.next = None
+    second_current.next = None
     return Context(first_head, second_head)
