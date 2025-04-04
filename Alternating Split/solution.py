@@ -11,4 +11,12 @@ class Context(object):
 def alternating_split(head):
     # Your code goes here.
     # Remember to return the context.
+    if not head or not head.next:
+        raise Exception("List must contain at least two nodes.")
+    first_head = head
+    second_head = head.next
+    first_current = first_head
+    second_current = second_head
+    current = head.next.next
+    is_first_turn = True
     return Context(first_head, second_head)
