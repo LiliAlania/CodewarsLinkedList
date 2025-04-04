@@ -9,4 +9,7 @@ def loop_size(node):
         return 0
     count = 1
     fast = fast.next
+    while slow != fast:
+        fast = fast.next
+        count += 1
     return count
